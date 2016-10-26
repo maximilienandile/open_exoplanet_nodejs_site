@@ -1,5 +1,74 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  #index-banner.section.no-pad-bot
+    .container
+      br
+      br
+      h1.header.center.orange-text Discover all Exoplanets
+      .row.center
+        h5.header.col.s12.light An interface to browse easily the Open Exoplanet Catalog
+      .row.center
+        a#download-button.btn-large.waves-effect.waves-light.orange(href='/random') Take Me To a random Planet
+      br
+      br
+  .container
+    .row
+      h5.center Last Updated Planets
+      .col.s6
+        .card.horizontal
+            .card-stacked
+              .card-content
+                h5(style="color:blue")=data[0].display_name
+                p=data[0].description
+                br
+                p(style="color:grey") Discovery Year : #{data[0].discoveryyear}
+                p(style="color:grey") Last Update : #{data[0].lastupdate}
+              .card-action
+                a.waves-effect.waves-light.btn(href='planet/#{data[0].name_slug}') 
+                  i.material-icons.left star
+                  | Go !
+      .col.s6
+        .card.horizontal
+            .card-stacked
+              .card-content
+                h5(style="color:blue")=data[1].display_name
+                p=data[1].description
+                br
+                p(style="color:grey") Discovery Year : #{data[1].discoveryyear}
+                p(style="color:grey") Last Update : #{data[1].lastupdate}
+              .card-action
+                a.waves-effect.waves-light.btn(href='planet/#{data[1].name_slug}') 
+                  i.material-icons.left star
+                  | Go !
+    .row
+      .col.s6
+        .card.horizontal
+            .card-stacked
+              .card-content
+                h5(style="color:blue")=data[2].display_name
+                p=data[2].description
+                br
+                p(style="color:grey") Discovery Year : #{data[2].discoveryyear}
+                p(style="color:grey") Last Update : #{data[2].lastupdate}
+
+              .card-action
+                a.waves-effect.waves-light.btn(href='planet/#{data[2].name_slug}') 
+                  i.material-icons.left star
+                  | Go !
+      .col.s6
+        .card.horizontal
+            .card-stacked
+              .card-content
+                h5(style="color:blue")=data[3].display_name
+                p=data[3].description
+                br
+                p(style="color:grey") Discovery Year : #{data[3].discoveryyear}
+                p(style="color:grey") Last Update : #{data[3].lastupdate}
+              .card-action
+                a.waves-effect.waves-light.btn(href='planet/#{data[3].name_slug}') 
+                  i.material-icons.left star
+                  | Go !
+    br
+    br
+    .section

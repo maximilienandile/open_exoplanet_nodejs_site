@@ -7,8 +7,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
 var routes = require('./routes/index');
 var users = require('./routes/user');
+
+var cron_job = require('./lib/cron_job')
 
 var app = express();
 
@@ -40,6 +43,8 @@ app.use(function(req, res, next) {
     next(err);
 });
 
+
+
 /// error handlers
 
 // development error handler
@@ -67,5 +72,8 @@ app.use(function(err, req, res, next) {
     });
 });
 
+
+// init the cron job
+cron_job.initialize_the_cron_task();
 
 module.exports = app;

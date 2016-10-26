@@ -1,8 +1,16 @@
 #!/usr/bin/env node
 var app = require('../app');
+var MongoClient = require('mongodb').MongoClient
 
+var config = require('../lib/config');
 app.set('port', process.env.PORT || 3000);
 
-var server = app.listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + server.address().port);
+
+MongoClient.connect(config.database.url, function(err, db) {
+
+  app.locals.db = db;
+  var server = app.listen(app.get('port'), function() {
+    console.log('Express server listening on port ' + server.address().port);
+  });
+
 });

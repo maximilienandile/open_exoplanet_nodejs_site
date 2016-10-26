@@ -2,12 +2,57 @@ doctype html
 html(lang='en')
   head
     meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title= title
     block css
-      link(rel='stylesheet', href='/css/style.css')
+      // Materialize
+      link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css')
+      link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+
     block js
       if ENV_DEVELOPMENT
         script(src='http://localhost:35729/livereload.js')
+      // JQuery
+      script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
+      // MAterialize
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js')
+
   body
-    block content
+    block navbar
+      nav.light-blue.lighten-1(role='navigation')
+        .nav-wrapper.container
+          a#logo-container.brand-logo(href='/') Exoplanets List
+          ul.right.hide-on-med-and-down
+            li
+              a(href='#') Navbar Link
+            li
+              a(href='#') Navbar Link
+          ul#nav-mobile.side-nav
+            li
+              a(href='#') Navbar Link
+            
+          a.button-collapse(href='#', data-activates='nav-mobile')
+            i.material-icons menu
+    .container
+      block content
+      
+    
+    block footer
+      footer.page-footer.orange
+        .container
+          .row
+            .col.l6.s12
+              p.grey-text.text-lighten-4
+                | This website has been developed thanks to the Open Exoplanet Catalog
+            .col.l3.s12
+              h5.white-text Links
+              ul
+                li
+                  a.white-text(href='https://github.com/OpenExoplanetCatalogue/open_exoplanet_catalogue') The Open Exoplanet Catalog
+                li
+                  a.white-text(href='') Source Code of this website
+
+        .footer-copyright
+          .container
+            | Made in Paris - MIT Licence - Data source : 
+            a(href='https://github.com/OpenExoplanetCatalogue/oec_gzip') here
