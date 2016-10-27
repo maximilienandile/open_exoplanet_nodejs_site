@@ -3,3 +3,79 @@ extends layout
 block content
   h2=data.display_name
   p=data.description
+
+  ul.collection
+    li.collection-item.avatar
+      i.material-icons.circle my_location
+      span.title System
+      p.planet_val=data.system_name_first
+      - if (data.system_names_array.length >0) {
+        p Other Names of The System
+        each system in data.system_names_array
+          
+          p.planet_val=system
+      -}
+    li.collection-item.avatar
+      i.material-icons.circle youtube_searched_for
+      span.title Discovery Year
+      p=data.discoveryyear
+    li.collection-item.avatar
+      i.material-icons.circle search
+      span.title Discovery Method
+      p.planet_val=data.discoverymethod
+    -if(data.mass){
+      li.collection-item.avatar
+        img.circle(src='../img/scale.png', alt='')
+        span.title Mass (Jupiter Masses)
+        - if (typeof data.mass != 'string'){
+          p.planet_val=data.mass.value
+          p Error Minus
+          p.planet_val=data.mass.errorminus
+          p Error Max
+          p.planet_val=data.mass.errorplus
+        -} else {
+          p.planet_val=data.mass
+        - }
+    -}
+    -if(data.period){
+      li.collection-item.avatar
+        img.circle(src='../img/orbit.png', alt='')
+        span.title Orbital period (day)
+        - if (typeof data.period != 'string'){
+          p.planet_val=data.period.value
+          p Error Minus
+          p.planet_val=data.period.errorminus
+          p Error Max
+          p.planet_val=data.period.errorplus
+        -} else {
+          p.planet_val=data.period
+        - }
+    - }
+    - if(data.eccentricity){
+      li.collection-item.avatar
+        img.circle(src='../img/eccentricity.jpg', alt='')
+        span.title Orbital Eccentricity
+        - if (typeof data.eccentricity != 'string'){
+          p.planet_val=data.eccentricity.value
+          p Error Minus
+          p.planet_val=data.eccentricity.errorminus
+          p Error Max
+          p.planet_val=data.eccentricity.errorplus
+        -} else {
+          p.planet_val=data.eccentricity
+        - }
+      - }
+      - if(data.temperature){
+        li.collection-item.avatar
+          img.circle(src='../img/temperature.png', alt='')
+          span.title Temperature (Kelvin)
+          - if (typeof data.temperature != 'string'){
+            p.planet_val=data.temperature.value
+            p Error Minus
+            p.planet_val=data.temperature.errorminus
+            p Error Max
+            p.planet_val=data.temperature.errorplus
+          -} else {
+            p.planet_val=data.temperature
+          - }
+        - }
