@@ -26,8 +26,7 @@
     "simple-get": "^2.3.0",
     "slug": "^0.9.1",
     "unzip": "^0.1.11",
-    "xml2json": "https://github.com/maximilienandile/node-xml2json/tarball/master",
-    "zlib": "^1.0.5"
+    "xml2json": "https://github.com/maximilienandile/node-xml2json/tarball/master"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
