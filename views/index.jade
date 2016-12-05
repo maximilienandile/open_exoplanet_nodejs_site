@@ -22,8 +22,9 @@ block content
                 h5(style="color:blue")=data[0].display_name
                 p=data[0].description
                 br
+                - var lu1 = data[0].lastupdate.substring(3);
                 p(style="color:grey") Discovery Year : #{data[0].discoveryyear}
-                p(style="color:grey") Last Update : #{data[0].lastupdate}
+                p(style="color:grey") Last Update : #{lu1}
               .card-action
                 a.waves-effect.waves-light.btn(href='planet/#{data[0].name_slug}') 
                   i.material-icons.left star
@@ -35,8 +36,9 @@ block content
                 h5(style="color:blue")=data[1].display_name
                 p=data[1].description
                 br
+                - var lu2 = data[1].lastupdate.substring(3);
                 p(style="color:grey") Discovery Year : #{data[1].discoveryyear}
-                p(style="color:grey") Last Update : #{data[1].lastupdate}
+                p(style="color:grey") Last Update : #{lu2}
               .card-action
                 a.waves-effect.waves-light.btn(href='planet/#{data[1].name_slug}') 
                   i.material-icons.left star
@@ -49,8 +51,9 @@ block content
                 h5(style="color:blue")=data[2].display_name
                 p=data[2].description
                 br
+                - var lu3 = data[2].lastupdate.substring(3);
                 p(style="color:grey") Discovery Year : #{data[2].discoveryyear}
-                p(style="color:grey") Last Update : #{data[2].lastupdate}
+                p(style="color:grey") Last Update : #{lu3}
 
               .card-action
                 a.waves-effect.waves-light.btn(href='planet/#{data[2].name_slug}') 
@@ -63,8 +66,9 @@ block content
                 h5(style="color:blue")=data[3].display_name
                 p=data[3].description
                 br
+                - var lu4 = data[3].lastupdate.substring(3);
                 p(style="color:grey") Discovery Year : #{data[3].discoveryyear}
-                p(style="color:grey") Last Update : #{data[3].lastupdate}
+                p(style="color:grey") Last Update : #{lu4}
               .card-action
                 a.waves-effect.waves-light.btn(href='planet/#{data[3].name_slug}') 
                   i.material-icons.left star
